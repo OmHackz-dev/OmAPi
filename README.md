@@ -1,7 +1,7 @@
 # OmAPi - Avatar Generator API
 
 [![GitHub](https://img.shields.io/badge/GitHub-OmHackz--dev%2FOmAPi-black?style=flat-square&logo=github)](https://github.com/OmHackz-dev/OmAPi)
-[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat-square&logo=vercel)](https://om-api.vercel.app)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat-square&logo=vercel)](https://omhackz-api.vercel.app)
 [![License](https://img.shields.io/badge/License-MIT-black?style=flat-square)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Built%20with-Next.js-black?style=flat-square&logo=next.js)](https://nextjs.org)
 
@@ -14,19 +14,20 @@ A powerful, customizable API for generating beautiful profile picture placeholde
 - ⚡ **Fast & Reliable** - Server-side rendering ensures fast delivery
 - 🖼️ **Image Serving** - Pre-configured image shortcuts
 - 📱 **Responsive** - Works seamlessly across all devices
+- 🚀 **More APIs Coming Soon** - Expanding platform with additional tools
 
 ## Quick Start
 
 ### Basic Usage
 
 \`\`\`
-https://om-api.vercel.app/api/dp?name=Om%20Sarkar
+https://omhackz-api.vercel.app/api/dp?name=Om%20Sarkar
 \`\`\`
 
 ### With Custom Colors
 
 \`\`\`
-https://om-api.vercel.app/api/dp?name=John%20Doe&bgColor=%234ECDC4&textColor=%23FFFFFF&size=200
+https://omhackz-api.vercel.app/api/dp?name=John%20Doe&bgColor=%234ECDC4&textColor=%23FFFFFF&size=200
 \`\`\`
 
 ## API Documentation
@@ -85,7 +86,7 @@ GET /img/[slug]
 
 \`\`\`html
 <img 
-  src="https://om-api.vercel.app/api/dp?name=John%20Doe&bgColor=%234ECDC4" 
+  src="https://omhackz-api.vercel.app/api/dp?name=John%20Doe&bgColor=%234ECDC4" 
   alt="John Doe"
   class="rounded-full w-12 h-12"
 />
@@ -95,7 +96,7 @@ GET /img/[slug]
 
 \`\`\`jsx
 <img 
-  src={`https://om-api.vercel.app/api/dp?name=${userName}&bgColor=%234ECDC4`}
+  src={`https://omhackz-api.vercel.app/api/dp?name=${userName}&bgColor=%234ECDC4`}
   alt={userName}
   className="rounded-full w-12 h-12"
 />
@@ -109,7 +110,7 @@ import Image from 'next/image'
 export default function UserAvatar({ name }) {
   return (
     <Image
-      src={`https://om-api.vercel.app/api/dp?name=${encodeURIComponent(name)}`}
+      src={`https://omhackz-api.vercel.app/api/dp?name=${encodeURIComponent(name)}`}
       alt={name}
       width={48}
       height={48}
@@ -123,7 +124,7 @@ export default function UserAvatar({ name }) {
 
 This project is deployed on [Vercel](https://vercel.com) and is live at:
 
-🌐 **https://om-api.vercel.app**
+🌐 **https://omhackz-api.vercel.app**
 
 ## Technology Stack
 
@@ -178,6 +179,10 @@ Recommended sizes for different use cases:
 - **Large Displays**: 200-300px
 - **Maximum**: 1000px
 
+## Coming Soon
+
+More APIs are coming to the OmAPi platform! Stay tuned for additional tools and features to expand your development toolkit.
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
@@ -190,7 +195,7 @@ Created by [OmHackz](https://omhackz.vercel.app)
 
 For issues, questions, or suggestions, please visit:
 
-- 📖 [Documentation](https://om-api.vercel.app/docs)
+- 📖 [Documentation](https://omhackz-api.vercel.app/docs)
 - 🐛 [GitHub Issues](https://github.com/OmHackz-dev/OmAPi/issues)
 - 🌐 [OmHackz Website](https://omhackz.vercel.app)
 

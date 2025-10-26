@@ -45,7 +45,7 @@ export default function DocsPage() {
               </p>
               <div className="bg-gray-50 rounded p-4 overflow-x-auto border border-gray-200">
                 <code className="text-gray-800 text-sm">
-                  https://om-api.vercel.app/api/dp?name=Om%20Sarkar&bgColor=%23FF6B6B&textColor=%23FFFFFF&size=200
+                  https://omhackz-api.vercel.app/api/dp?name=Om%20Sarkar&bgColor=%23FF6B6B&textColor=%23FFFFFF&size=200
                 </code>
               </div>
             </CardContent>
@@ -205,7 +205,7 @@ export default function DocsPage() {
               <div className="bg-gray-50 rounded p-4 overflow-x-auto border border-gray-200">
                 <code className="text-gray-800 text-sm block whitespace-pre-wrap">
                   {`<img 
-  src="https://om-api.vercel.app/api/dp?name=John%20Doe&bgColor=%234ECDC4" 
+  src="https://omhackz-api.vercel.app/api/dp?name=John%20Doe&bgColor=%234ECDC4" 
   alt="John Doe"
   className="rounded-full w-12 h-12"
 />`}
@@ -222,7 +222,7 @@ export default function DocsPage() {
               <div className="bg-gray-50 rounded p-4 overflow-x-auto border border-gray-200">
                 <code className="text-gray-800 text-sm block whitespace-pre-wrap">
                   {`<img 
-  src={\`https://om-api.vercel.app/api/dp?name=\${userName || "/placeholder.svg"}&bgColor=%234ECDC4\`}
+  src={\`https://omhackz-api.vercel.app/api/dp?name=\${userName || "/placeholder.svg"}&bgColor=%234ECDC4\`}
   alt={userName}
   className="rounded-full w-12 h-12"
 />`}

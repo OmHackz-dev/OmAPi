@@ -125,6 +125,15 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Coming Soon Section */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-gray-50 rounded-lg border border-gray-200 text-center">
+        <h2 className="text-3xl font-bold text-black mb-4">More APIs Coming Soon</h2>
+        <p className="text-lg text-gray-600">
+          We're working on additional powerful APIs to expand the OmAPi platform. Stay tuned for more tools and
+          features!
+        </p>
+      </section>
+
       {/* CTA Section */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <h2 className="text-4xl font-bold text-black mb-6">Ready to get started?</h2>
@@ -141,7 +150,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-gray-200 bg-white mt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-600">
-          <p>OmAPi © 2025. Built with Next.js and hosted on Vercel.</p>
+          <p>OmAPi © 2025. Made by OmHackz. Built with Next.js and hosted on Vercel.</p>
           <p className="text-sm mt-2">
             <a href="https://github.com/OmHackz-dev/OmAPi" className="hover:text-black transition">
               GitHub
