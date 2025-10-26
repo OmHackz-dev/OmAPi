@@ -125,6 +125,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Badges API Section */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <h2 className="text-3xl font-bold text-black mb-8">Badges API</h2>
+        <Card className="bg-white border-gray-200">
+          <CardHeader>
+            <CardTitle className="text-black">Create Custom Badges</CardTitle>
+            <CardDescription>A better alternative to shields.io with advanced styling</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <p className="text-gray-600">
+              Generate beautiful, customizable badges with gradients, multiple shapes, and outline support. Perfect for
+              README files, documentation, and more.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <img
+                src="/api/badge?label=Build&message=Badge&labelColor=%23555555&messageColor=%234CAF50"
+                alt="Badge 1"
+              />
+              <img
+                src="/api/badge?label=Status&message=Active&labelColor=%23FF6B6B&messageColor=%234ECDC4&shape=pill"
+                alt="Badge 2"
+              />
+              <img
+                src="/api/badge?label=Version&message=v1.0&labelColor=%23667EEA&messageColor=%23764BA2&gradient=true&gradientAngle=45"
+                alt="Badge 3"
+              />
+            </div>
+            <Link href="/build-badge">
+              <Button className="bg-black text-white hover:bg-gray-800">Try Badge Builder</Button>
+            </Link>
+          </CardContent>
+        </Card>
+      </section>
+
       {/* Coming Soon Section */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-gray-50 rounded-lg border border-gray-200 text-center">
         <h2 className="text-3xl font-bold text-black mb-4">More APIs Coming Soon</h2>

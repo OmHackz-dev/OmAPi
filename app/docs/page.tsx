@@ -50,122 +50,6 @@ export default function DocsPage() {
               </div>
             </CardContent>
           </Card>
-
-          {/* Query Parameters */}
-          <h3 className="text-2xl font-bold text-black mb-4">Query Parameters</h3>
-          <div className="space-y-4">
-            <Card className="bg-white border-gray-200">
-              <CardHeader>
-                <CardTitle className="text-black text-lg">name</CardTitle>
-                <CardDescription>Required - The user's full name</CardDescription>
-              </CardHeader>
-              <CardContent className="text-gray-600">
-                <p className="mb-2">Extracts initials from the name to display in the avatar.</p>
-                <div className="bg-gray-50 rounded p-3 text-sm border border-gray-200">
-                  <code className="text-gray-800">?name=Om%20Sarkar</code> → <span className="text-gray-500">OS</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-gray-200">
-              <CardHeader>
-                <CardTitle className="text-black text-lg">bgColor</CardTitle>
-                <CardDescription>Optional - Background color (hex format)</CardDescription>
-              </CardHeader>
-              <CardContent className="text-gray-600">
-                <p className="mb-2">Hex color code for the background. Default: #3B82F6</p>
-                <div className="bg-gray-50 rounded p-3 text-sm border border-gray-200">
-                  <code className="text-gray-800">?bgColor=%23FF6B6B</code> →{" "}
-                  <span className="text-gray-500">Red background</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-gray-200">
-              <CardHeader>
-                <CardTitle className="text-black text-lg">textColor</CardTitle>
-                <CardDescription>Optional - Text color (hex format)</CardDescription>
-              </CardHeader>
-              <CardContent className="text-gray-600">
-                <p className="mb-2">Hex color code for the initials text. Default: #FFFFFF</p>
-                <div className="bg-gray-50 rounded p-3 text-sm border border-gray-200">
-                  <code className="text-gray-800">?textColor=%23000000</code> →{" "}
-                  <span className="text-gray-500">Black text</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-gray-200">
-              <CardHeader>
-                <CardTitle className="text-black text-lg">size</CardTitle>
-                <CardDescription>Optional - Image size in pixels</CardDescription>
-              </CardHeader>
-              <CardContent className="text-gray-600">
-                <p className="mb-2">Width and height of the square image. Default: 200</p>
-                <div className="bg-gray-50 rounded p-3 text-sm border border-gray-200">
-                  <code className="text-gray-800">?size=150</code> →{" "}
-                  <span className="text-gray-500">150x150 pixels</span>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Examples Section */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-black mb-6">Examples</h2>
-
-          <div className="space-y-8">
-            <Card className="bg-white border-gray-200">
-              <CardHeader>
-                <CardTitle className="text-black">Basic Usage</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-gray-50 rounded p-4 mb-4 overflow-x-auto border border-gray-200">
-                  <code className="text-gray-800 text-sm">/api/dp?name=Om%20Sarkar</code>
-                </div>
-                <img
-                  src="/api/dp?name=Om%20Sarkar&size=100"
-                  alt="Om Sarkar Avatar"
-                  className="rounded-full w-24 h-24"
-                />
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-gray-200">
-              <CardHeader>
-                <CardTitle className="text-black">Custom Colors</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-gray-50 rounded p-4 mb-4 overflow-x-auto border border-gray-200">
-                  <code className="text-gray-800 text-sm">
-                    /api/dp?name=John%20Doe&bgColor=%234ECDC4&textColor=%23FFFFFF
-                  </code>
-                </div>
-                <img
-                  src="/api/dp?name=John%20Doe&bgColor=%234ECDC4&textColor=%23FFFFFF&size=100"
-                  alt="John Doe Avatar"
-                  className="rounded-full w-24 h-24"
-                />
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-gray-200">
-              <CardHeader>
-                <CardTitle className="text-black">Custom Size</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-gray-50 rounded p-4 mb-4 overflow-x-auto border border-gray-200">
-                  <code className="text-gray-800 text-sm">/api/dp?name=Jane%20Smith&size=300</code>
-                </div>
-                <img
-                  src="/api/dp?name=Jane%20Smith&size=150"
-                  alt="Jane Smith Avatar"
-                  className="rounded-full w-32 h-32"
-                />
-              </CardContent>
-            </Card>
-          </div>
         </section>
 
         {/* Image Serving Section */}
@@ -193,53 +77,308 @@ export default function DocsPage() {
           </Card>
         </section>
 
-        {/* Integration Section */}
+        {/* Badges API documentation section */}
         <section className="mb-12">
-          <h2 className="text-3xl font-bold text-black mb-6">Integration Examples</h2>
-
-          <Card className="bg-white border-gray-200">
+          <h2 className="text-3xl font-bold text-black mb-6">Badges API</h2>
+          <Card className="bg-white border-gray-200 mb-6">
             <CardHeader>
-              <CardTitle className="text-black">HTML</CardTitle>
+              <CardTitle className="text-black font-mono">GET /api/badge</CardTitle>
+              <CardDescription>Generate customizable badges with advanced styling</CardDescription>
             </CardHeader>
             <CardContent>
+              <p className="text-gray-600 mb-4">
+                Create beautiful badges with gradients, multiple shapes, and outline support. A better alternative to
+                shields.io.
+              </p>
               <div className="bg-gray-50 rounded p-4 overflow-x-auto border border-gray-200">
-                <code className="text-gray-800 text-sm block whitespace-pre-wrap">
-                  {`<img 
-  src="https://omhackz-api.vercel.app/api/dp?name=John%20Doe&bgColor=%234ECDC4" 
-  alt="John Doe"
-  className="rounded-full w-12 h-12"
-/>`}
+                <code className="text-gray-800 text-sm">
+                  https://omhackz-api.vercel.app/api/badge?label=Build&message=Badge&labelColor=%23555555&messageColor=%234CAF50
                 </code>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-white border-gray-200 mt-4">
+          <h3 className="text-2xl font-bold text-black mb-4">Query Parameters</h3>
+          <div className="space-y-4">
+            <Card className="bg-white border-gray-200">
+              <CardHeader>
+                <CardTitle className="text-black text-lg">label</CardTitle>
+                <CardDescription>Required - Left side text</CardDescription>
+              </CardHeader>
+              <CardContent className="text-gray-600">
+                <p>The text to display on the left side of the badge.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-gray-200">
+              <CardHeader>
+                <CardTitle className="text-black text-lg">message</CardTitle>
+                <CardDescription>Required - Right side text</CardDescription>
+              </CardHeader>
+              <CardContent className="text-gray-600">
+                <p>The text to display on the right side of the badge.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-gray-200">
+              <CardHeader>
+                <CardTitle className="text-black text-lg">labelColor</CardTitle>
+                <CardDescription>Optional - Hex color for label background</CardDescription>
+              </CardHeader>
+              <CardContent className="text-gray-600">
+                <p className="mb-2">Default: #555555</p>
+                <div className="bg-gray-50 rounded p-3 text-sm border border-gray-200">
+                  <code className="text-gray-800">?labelColor=%23FF6B6B</code>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-gray-200">
+              <CardHeader>
+                <CardTitle className="text-black text-lg">messageColor</CardTitle>
+                <CardDescription>Optional - Hex color for message background</CardDescription>
+              </CardHeader>
+              <CardContent className="text-gray-600">
+                <p className="mb-2">Default: #4CAF50</p>
+                <div className="bg-gray-50 rounded p-3 text-sm border border-gray-200">
+                  <code className="text-gray-800">?messageColor=%234ECDC4</code>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-gray-200">
+              <CardHeader>
+                <CardTitle className="text-black text-lg">textColor</CardTitle>
+                <CardDescription>Optional - Hex color for text</CardDescription>
+              </CardHeader>
+              <CardContent className="text-gray-600">
+                <p className="mb-2">Default: #FFFFFF</p>
+                <div className="bg-gray-50 rounded p-3 text-sm border border-gray-200">
+                  <code className="text-gray-800">?textColor=%23000000</code>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-gray-200">
+              <CardHeader>
+                <CardTitle className="text-black text-lg">shape</CardTitle>
+                <CardDescription>Optional - Badge shape</CardDescription>
+              </CardHeader>
+              <CardContent className="text-gray-600">
+                <p className="mb-2">Options: rounded, square, pill. Default: rounded</p>
+                <div className="bg-gray-50 rounded p-3 text-sm border border-gray-200">
+                  <code className="text-gray-800">?shape=pill</code>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-gray-200">
+              <CardHeader>
+                <CardTitle className="text-black text-lg">gradient</CardTitle>
+                <CardDescription>Optional - Enable gradient effect</CardDescription>
+              </CardHeader>
+              <CardContent className="text-gray-600">
+                <p className="mb-2">Options: true, false. Default: false</p>
+                <div className="bg-gray-50 rounded p-3 text-sm border border-gray-200">
+                  <code className="text-gray-800">?gradient=true&gradientAngle=45</code>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-gray-200">
+              <CardHeader>
+                <CardTitle className="text-black text-lg">outlineColor</CardTitle>
+                <CardDescription>Optional - Outline color</CardDescription>
+              </CardHeader>
+              <CardContent className="text-gray-600">
+                <p className="mb-2">Hex color or "none". Default: none</p>
+                <div className="bg-gray-50 rounded p-3 text-sm border border-gray-200">
+                  <code className="text-gray-800">?outlineColor=%23000000&outlineWidth=2</code>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-gray-200">
+              <CardHeader>
+                <CardTitle className="text-black text-lg">fontSize</CardTitle>
+                <CardDescription>Optional - Font size in pixels</CardDescription>
+              </CardHeader>
+              <CardContent className="text-gray-600">
+                <p className="mb-2">Default: 14</p>
+                <div className="bg-gray-50 rounded p-3 text-sm border border-gray-200">
+                  <code className="text-gray-800">?fontSize=18</code>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-gray-200">
+              <CardHeader>
+                <CardTitle className="text-black text-lg">padding</CardTitle>
+                <CardDescription>Optional - Padding in pixels</CardDescription>
+              </CardHeader>
+              <CardContent className="text-gray-600">
+                <p className="mb-2">Default: 8</p>
+                <div className="bg-gray-50 rounded p-3 text-sm border border-gray-200">
+                  <code className="text-gray-800">?padding=12</code>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <h3 className="text-2xl font-bold text-black mb-4 mt-8">Badge Builder</h3>
+          <Card className="bg-white border-gray-200">
             <CardHeader>
-              <CardTitle className="text-black">React</CardTitle>
+              <CardTitle className="text-black">Interactive Badge Builder</CardTitle>
+              <CardDescription>Create and customize badges visually</CardDescription>
+            </CardHeader>
+            <CardContent className="text-gray-600">
+              <p className="mb-4">
+                Use the interactive badge builder to customize your badges in real-time and get the API URL instantly.
+              </p>
+              <Link href="/build-badge">
+                <Button className="bg-black text-white hover:bg-gray-800">Open Badge Builder</Button>
+              </Link>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Integration Section */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-black mb-6">Integration</h2>
+          <Card className="bg-white border-gray-200">
+            <CardHeader>
+              <CardTitle className="text-black">Integration Examples</CardTitle>
+              <CardDescription>How to use OmAPi in your projects</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="bg-gray-50 rounded p-4 overflow-x-auto border border-gray-200">
-                <code className="text-gray-800 text-sm block whitespace-pre-wrap">
-                  {`<img 
-  src={\`https://omhackz-api.vercel.app/api/dp?name=\${userName || "/placeholder.svg"}&bgColor=%234ECDC4\`}
-  alt={userName}
-  className="rounded-full w-12 h-12"
-/>`}
-                </code>
+              <p className="text-gray-600 mb-4">
+                OmAPi is easy to integrate into any project. Here are some examples of how to use it.
+              </p>
+              <div className="space-y-4">
+                <Card className="bg-gray-50 border border-gray-200">
+                  <CardHeader>
+                    <CardTitle className="text-black font-mono">JavaScript/Node.js</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <pre className="text-sm text-gray-800">
+                      <code>
+                        {`// Generate avatar
+const fetch = require('node-fetch');
+
+async function generateAvatar() {
+  const response = await fetch('https://omhackz-api.vercel.app/api/dp?name=Om%20Sarkar&bgColor=%23FF6B6B&textColor=%23FFFFFF&size=200');
+  const avatar = await response.blob();
+  
+  return avatar;
+}
+
+generateAvatar().then(avatar => {
+  console.log('Avatar generated!');
+});`}
+                      </code>
+                    </pre>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-50 border border-gray-200">
+                  <CardHeader>
+                    <CardTitle className="text-black font-mono">Python</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <pre className="text-sm text-gray-800">
+                      <code>
+                        {`import requests
+
+def generate_avatar():
+    url = 'https://omhackz-api.vercel.app/api/dp'
+    params = {
+        'name': 'Om%20Sarkar',
+        'bgColor': '%23FF6B6B',
+        'textColor': '%23FFFFFF',
+        'size': '200'
+    }
+    
+    response = requests.get(url, params=params)
+    return response.content
+
+avatar = generate_avatar()
+print('Avatar generated!')`}
+                      </code>
+                    </pre>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-50 border border-gray-200">
+                  <CardHeader>
+                    <CardTitle className="text-black font-mono">HTML/CSS</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <pre className="text-sm text-gray-800">
+                      <code>
+                        {`<img src="https://omhackz-api.vercel.app/api/dp?name=Om%20Sarkar&bgColor=%23FF6B6B&textColor=%23FFFFFF&size=200" 
+                             alt="Om%20Sarkar" 
+                             class="avatar" />
+                        <img src="https://omhackz-api.vercel.app/api/badge?label=Build&message=Badge&labelColor=%23555555&messageColor=%234CAF50" 
+                             alt="Build Badge" 
+                             class="badge" />`}
+                      </code>
+                    </pre>
+                  </CardContent>
+                </Card>
               </div>
             </CardContent>
           </Card>
         </section>
 
-        {/* Footer */}
-        <div className="border-t border-gray-200 pt-8 mt-12">
-          <Link href="/">
-            <Button variant="outline" className="border-black text-black hover:bg-gray-100 bg-transparent">
-              Back to Home
-            </Button>
-          </Link>
-        </div>
+        {/* FAQ Section */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-black mb-6">Frequently Asked Questions</h2>
+          <Card className="bg-white border-gray-200">
+            <CardHeader>
+              <CardTitle className="text-black">Common Questions</CardTitle>
+              <CardDescription>Answers to common queries about OmAPi</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="border-b border-gray-200 pb-4">
+                  <h3 className="text-lg font-semibold text-black mb-2">How do I generate a custom avatar?</h3>
+                  <p className="text-gray-600">
+                    Use the /api/dp endpoint with parameters like name, bgColor, textColor, and size.
+                  </p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-4">
+                  <h3 className="text-lg font-semibold text-black mb-2">
+                    Can I use OmAPi with any programming language?
+                  </h3>
+                  <p className="text-gray-600">
+                    Yes, OmAPi is accessible via HTTP requests, so it works with any language that can make HTTP calls.
+                  </p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-4">
+                  <h3 className="text-lg font-semibold text-black mb-2">What are the image formats supported?</h3>
+                  <p className="text-gray-600">
+                    All images are served as PNG format. The API returns PNG images directly.
+                  </p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-4">
+                  <h3 className="text-lg font-semibold text-black mb-2">How do I customize badges?</h3>
+                  <p className="text-gray-600">
+                    Use the /api/badge endpoint with parameters like label, message, labelColor, messageColor, and
+                    shape.
+                  </p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-4">
+                  <h3 className="text-lg font-semibold text-black mb-2">Is there a rate limit?</h3>
+                  <p className="text-gray-600">OmAPi has no rate limits. You can make unlimited requests to the API.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </main>
   )
