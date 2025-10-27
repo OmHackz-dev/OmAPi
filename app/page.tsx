@@ -1,56 +1,65 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Users, Tag, Upload, Type, ImageIcon, Palette } from "lucide-react"
 
 export default function Home() {
   const apis = [
     {
       title: "Avatar Generator",
       description: "Generate custom profile picture placeholders with initials",
-      icon: "👤",
-      href: "/build-badge",
+      icon: Users,
+      href: "/build-avatar",
       color: "from-blue-500 to-blue-600",
       features: ["Customizable colors", "Any size", "Fast rendering"],
+      output: "OS", // Shows initials
     },
     {
       title: "Badges",
       description: "Create beautiful, customizable badges with gradients and shapes",
-      icon: "🏷️",
+      icon: Tag,
       href: "/build-badge",
       color: "from-purple-500 to-purple-600",
       features: ["Gradients", "Multiple shapes", "Custom outlines"],
+      output: "BADGE",
     },
     {
       title: "Image Uploader",
       description: "Upload and share images with unique shareable links",
-      icon: "📸",
+      icon: Upload,
       href: "/upload",
       color: "from-pink-500 to-pink-600",
       features: ["Max 5MB", "Unique IDs", "Easy sharing"],
+      output: "AB123",
     },
     {
       title: "Text Translator",
       description: "Encode and decode text using various formats",
-      icon: "🔤",
+      icon: Type,
       href: "/translate",
       color: "from-green-500 to-green-600",
       features: ["Base64, Hex, URL", "Binary, ASCII, ROT13", "Real-time"],
+      output: "48656C6C6F",
     },
     {
       title: "Placeholder Generator",
       description: "Generate placeholder images with custom dimensions",
-      icon: "🖼️",
+      icon: ImageIcon,
       href: "/build-placeholder",
       color: "from-orange-500 to-orange-600",
       features: ["Custom sizes", "Any color", "Dimension text"],
+      output: "800x600",
     },
     {
       title: "Greydient Generator",
       description: "Create beautiful gradients with multiple colors and angles",
-      icon: "🎨",
+      icon: Palette,
       href: "/build-greydient",
       color: "from-cyan-500 to-cyan-600",
       features: ["Multiple colors", "Custom angles", "Smooth blends"],
+      output: "gradient",
     },
   ]
 
@@ -120,29 +129,35 @@ export default function Home() {
         <p className="text-gray-600 text-center mb-12 text-lg">Choose from our collection of powerful APIs</p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {apis.map((api, index) => (
-            <Link key={index} href={api.href}>
-              <Card className="bg-white border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all cursor-pointer h-full">
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <span className="text-4xl">{api.icon}</span>
-                  </div>
-                  <CardTitle className="text-black text-xl">{api.title}</CardTitle>
-                  <CardDescription className="text-gray-600">{api.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {api.features.map((feature, i) => (
-                      <li key={i} className="text-sm text-gray-600 flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 bg-black rounded-full"></span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
+          {apis.map((api, index) => {
+            const IconComponent = api.icon
+            return (
+              <Link key={index} href={api.href}>
+                <Card className="bg-white border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all cursor-pointer h-full flex flex-col">
+                  <CardHeader>
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="p-3 bg-gray-100 rounded-lg">
+                        <IconComponent className="w-6 h-6 text-black" />
+                      </div>
+                      <div className="px-3 py-1 bg-gray-100 rounded text-xs font-mono text-gray-700">{api.output}</div>
+                    </div>
+                    <CardTitle className="text-black text-xl">{api.title}</CardTitle>
+                    <CardDescription className="text-gray-600">{api.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    <ul className="space-y-2">
+                      {api.features.map((feature, i) => (
+                        <li key={i} className="text-sm text-gray-600 flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 bg-black rounded-full"></span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </Link>
+            )
+          })}
         </div>
       </section>
 
