@@ -2,7 +2,7 @@
 
 [![GitHub](https://img.shields.io/badge/GitHub-OmHackz--dev%2FOmAPi-black?style=flat-square&logo=github)](https://github.com/OmHackz-dev/OmAPi)
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat-square&logo=vercel)](https://omhackz-api.vercel.app)
-[![License](https://img.shields.io/badge/License-Custom-black?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/License-Custom-black?style=flat-square)](https://github.com/OmHackz-dev/OmAPi/?tab=License-1-ov-file)
 [![Next.js](https://img.shields.io/badge/Built%20with-Next.js-black?style=flat-square&logo=next.js)](https://nextjs.org)
 
 A powerful, customizable API for generating beautiful profile picture placeholders with initials. Perfect for user profiles, team directories, and more.
